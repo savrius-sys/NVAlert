@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# 📦 NVAlert
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![NVAlert Hero](src/assets/hero.png)
 
-Currently, two official plugins are available:
+**NVAlert** — це неофіційне, швидке та зручне браузерне розширення для відстеження посилок "Нової Пошти". Отримуйте Push-сповіщення про зміну статусів ваших відправлень прямо у браузері (Chrome, Firefox, Edge, Brave), без необхідності постійно заходити на сайт.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Ключові можливості
 
-## React Compiler
+- **Автоматичне відстеження:** Додайте номер ТТН один раз, і розширення автоматично перевірятиме його статус у фоновому режимі.
+- **Push-сповіщення:** Миттєві повідомлення в операційній системі, коли статус вашої посилки змінюється (наприклад, "Прибуло у відділення").
+- **Історія переміщень (Таймлайн):** На відміну від стандартного API, розширення зберігає локальну історію всіх пройдених статусів посилки, формуючи зручний візуальний маршрут.
+- **Інтеграція з API:** Підключіть свій особистий API-ключ "Нової Пошти" для отримання розширеної інформації (вартість доставки, точний маршрут, вага, очікувана дата прибуття).
+- **Локальне збереження:** Всі ваші дані (ТТН, історія, API-ключі) зберігаються виключно локально у вашому браузері.
+- **Багатомовність:** Підтримка української та англійської мов.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Встановлення
 
-## Expanding the ESLint configuration
+### З готового архіву (Sideloading / Developer Mode)
+1. Завантажте останню версію архіву `nvalert.zip` із розділу [Releases](https://github.com/savrius-sys/NVAlert/releases) (або зберіть самостійно).
+2. Розпакуйте архів у зручну для вас папку.
+3. **Для Chrome / Edge / Brave:**
+   - Відкрийте сторінку керування розширеннями (`chrome://extensions/`).
+   - Увімкніть **"Режим розробника"** (Developer mode) у правому верхньому куті.
+   - Натисніть **"Завантажити розпаковане розширення"** (Load unpacked) і виберіть розпаковану папку `dist`.
+4. **Для Firefox:**
+   - Відкрийте сторінку `about:debugging#/runtime/this-firefox`.
+   - Натисніть **"Завантажити тимчасовий додаток..."** (Load Temporary Add-on...).
+   - Виберіть файл `manifest.json` із папки `dist`.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Збірка з вихідного коду
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Проєкт побудований на сучасному стеку: **React + TypeScript + Vite + Lucide React**.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Вимоги:
+- [Node.js](https://nodejs.org/) (рекомендовано v18+)
+- [pnpm](https://pnpm.io/) (пакетний менеджер)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Кроки:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Клонуйте репозиторій:
+   ```bash
+   git clone https://github.com/savrius-sys/NVAlert.git
+   cd NVAlert
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Встановіть залежності:
+   ```bash
+   pnpm install
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Запустіть локальний сервер для розробки (відкриється як звичайна веб-сторінка):
+   ```bash
+   pnpm dev
+   ```
+
+4. Зберіть готове розширення (файли з'являться у папці `dist`):
+   ```bash
+   pnpm build
+   ```
+
+## 🔒 Конфіденційність
+
+Розширення не збирає телеметрію та не відправляє ваші дані на сторонні сервери. Всі запити йдуть виключно з вашого браузера безпосередньо на офіційні публічні сервери `api.novaposhta.ua`.
+
+## 📄 Ліцензія
+
+Цей проєкт розповсюджується за ліцензією MIT. Ви вільні використовувати, змінювати та поширювати його.
+
+---
+
+*Розробка не пов'язана з компанією ТОВ "Нова Пошта". Усі права на торговельні марки належать їхнім власникам.*
