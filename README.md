@@ -1,69 +1,71 @@
 # 📦 NVAlert
 
-**NVAlert** — це неофіційне, швидке та зручне браузерне розширення для відстеження посилок "Нової Пошти". Отримуйте Push-сповіщення про зміну статусів ваших відправлень прямо у браузері (Chrome, Firefox, Edge, Brave), без необхідності постійно заходити на сайт.
+[🇬🇧 English](README.md) | [🇺🇦 Українська](README.uk.md)
 
-## ✨ Ключові можливості
+**NVAlert** is an unofficial, fast, and convenient browser extension for tracking "Nova Poshta" parcels. Get Push notifications about your shipment status changes directly in your browser (Chrome, Firefox, Edge, Brave), without needing to constantly check the website.
 
-- **Автоматичне відстеження:** Додайте номер ТТН один раз, і розширення автоматично перевірятиме його статус у фоновому режимі.
-- **Push-сповіщення:** Миттєві повідомлення в операційній системі, коли статус вашої посилки змінюється (наприклад, "Прибуло у відділення").
-- **Історія переміщень (Таймлайн):** На відміну від стандартного API, розширення зберігає локальну історію всіх пройдених статусів посилки, формуючи зручний візуальний маршрут.
-- **Інтеграція з API:** Підключіть свій особистий API-ключ "Нової Пошти" для отримання розширеної інформації (вартість доставки, точний маршрут, вага, очікувана дата прибуття).
-- **Локальне збереження:** Всі ваші дані (ТТН, історія, API-ключі) зберігаються виключно локально у вашому браузері.
-- **Багатомовність:** Підтримка української та англійської мов.
+## ✨ Key Features
 
-## 🚀 Встановлення
+- **Automatic Tracking:** Add your tracking number (TTN) once, and the extension will automatically check its status in the background.
+- **Push Notifications:** Instant system notifications when your parcel's status changes (e.g., "Arrived at the branch").
+- **Movement History (Timeline):** Unlike the standard API, the extension keeps a local history of all passed parcel statuses, creating a convenient visual route.
+- **API Integration:** Connect your personal "Nova Poshta" API key to get extended information (delivery cost, exact route, weight, estimated arrival date).
+- **Local Storage:** All your data (TTNs, history, API keys) is stored exclusively locally in your browser.
+- **Multilingual:** Supports both Ukrainian and English languages.
 
-### З готового архіву (Sideloading / Developer Mode)
-1. Завантажте останню версію архіву `nvalert.zip` із розділу [Releases](https://github.com/savrius-sys/NVAlert/releases) (або зберіть самостійно).
-2. Розпакуйте архів у зручну для вас папку.
-3. **Для Chrome / Edge / Brave:**
-   - Відкрийте сторінку керування розширеннями (`chrome://extensions/`).
-   - Увімкніть **"Режим розробника"** (Developer mode) у правому верхньому куті.
-   - Натисніть **"Завантажити розпаковане розширення"** (Load unpacked) і виберіть розпаковану папку `dist`.
-4. **Для Firefox:**
-   - Відкрийте сторінку `about:debugging#/runtime/this-firefox`.
-   - Натисніть **"Завантажити тимчасовий додаток..."** (Load Temporary Add-on...).
-   - Виберіть файл `manifest.json` із папки `dist`.
+## 🚀 Installation
 
-## 🛠 Збірка з вихідного коду
+### From a Ready Archive (Sideloading / Developer Mode)
+1. Download the latest `nvalert.zip` archive from the [Releases](https://github.com/savrius-sys/NVAlert/releases) section (or build it yourself).
+2. Extract the archive to a convenient folder.
+3. **For Chrome / Edge / Brave:**
+   - Open the extensions management page (`chrome://extensions/`).
+   - Enable **"Developer mode"** in the top right corner.
+   - Click **"Load unpacked"** and select the extracted `dist` folder.
+4. **For Firefox:**
+   - Open the `about:debugging#/runtime/this-firefox` page.
+   - Click **"Load Temporary Add-on..."**.
+   - Select the `manifest.json` file from the `dist` folder.
 
-Проєкт побудований на сучасному стеку: **React + TypeScript + Vite + Lucide React**.
+## 🛠 Building from Source
 
-### Вимоги:
-- [Node.js](https://nodejs.org/) (рекомендовано v18+)
-- [pnpm](https://pnpm.io/) (пакетний менеджер)
+The project is built on a modern stack: **React + TypeScript + Vite + Lucide React**.
 
-### Кроки:
+### Requirements:
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [pnpm](https://pnpm.io/) (package manager)
 
-1. Клонуйте репозиторій:
+### Steps:
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/savrius-sys/NVAlert.git
    cd NVAlert
    ```
 
-2. Встановіть залежності:
+2. Install dependencies:
    ```bash
    pnpm install
    ```
 
-3. Запустіть локальний сервер для розробки (відкриється як звичайна веб-сторінка):
+3. Start the local development server (opens as a regular web page):
    ```bash
    pnpm dev
    ```
 
-4. Зберіть готове розширення (файли з'являться у папці `dist`):
+4. Build the ready extension (files will appear in the `dist` folder):
    ```bash
    pnpm build
    ```
 
-## 🔒 Конфіденційність
+## 🔒 Privacy
 
-Розширення не збирає телеметрію та не відправляє ваші дані на сторонні сервери. Всі запити йдуть виключно з вашого браузера безпосередньо на офіційні публічні сервери `api.novaposhta.ua`.
+The extension does not collect telemetry or send your data to third-party servers. All requests go exclusively from your browser directly to the official public `api.novaposhta.ua` servers.
 
-## 📄 Ліцензія
+## 📄 License
 
-Цей проєкт розповсюджується за ліцензією MIT. Ви вільні використовувати, змінювати та поширювати його.
+This project is distributed under the MIT License. You are free to use, modify, and distribute it.
 
 ---
 
-*Розробка не пов'язана з компанією ТОВ "Нова Пошта". Усі права на торговельні марки належать їхнім власникам.*
+*This development is not affiliated with "Nova Poshta" LLC. All rights to trademarks belong to their respective owners.*
